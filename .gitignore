@@ -1,0 +1,8 @@
+.DS_Store
+*.DS_Store
+.vscode/
+ex*/main.c
+ex*/*.out
+main.c
+a.out
+
