@@ -6,11 +6,11 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:29:01 by inavarro          #+#    #+#             */
-/*   Updated: 2022/09/20 19:11:21 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:05:11 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

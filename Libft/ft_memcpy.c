@@ -6,15 +6,17 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 19:19:06 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/07 09:27:27 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:09:07 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memcpy( void *dst, const void *src, size_t count )
+#include "libft.h"
+
+void	*ft_memcpy( void *dst, const void *src, size_t count )
 {
-	char *d;
-	char *s;
-	size_t i;
+	char	*d;
+	char	*s;
+	size_t	i;
 
 	d = (char *)dst;
 	s = (char *)src;

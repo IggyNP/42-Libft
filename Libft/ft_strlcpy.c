@@ -6,15 +6,29 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 12:34:23 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/07 09:27:23 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/10/07 12:05:47 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
+	unsigned int	i;
+	unsigned int	n;
 
+	i = 0; 
+	n = ft_strlen(src);
+	if (dstsize != 0)
+	{
+		while (src[i] != '\0' && i < dstsize - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (n);
 }
 
 /*
