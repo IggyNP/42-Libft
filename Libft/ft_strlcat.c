@@ -6,7 +6,7 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:26:52 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/18 14:43:39 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:22:21 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
      tice this should not happen as it means that either dstsize is incorrect
      or that dst is not a proper string).
 
-     If the src and dst strings overlap, the behavior is undefined.*/
+     If the src and dst strings overlap, the behavior is undefined.
+*/

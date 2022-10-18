@@ -6,7 +6,7 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:48:52 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/18 13:10:27 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/10/18 15:59:03 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void		*ft_memset(void *b, int c, size_t len);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
-
+int			ft_toupper(int c);
+int			ft_tolower(int c);
 #endif
