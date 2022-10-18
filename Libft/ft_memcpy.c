@@ -6,7 +6,7 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 19:19:06 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/07 12:09:07 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/10/18 11:21:41 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ void	*ft_memcpy( void *dst, const void *src, size_t count )
 	d = (char *)dst;
 	s = (char *)src;
 	i = 0;
+	if (!dst && !src)
+	{
+		return (NULL);
+	}
 	while (i < count)
 	{
 		d[i] = s[i];
