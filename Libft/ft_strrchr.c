@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 16:03:47 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/20 12:25:47 by inavarro         ###   ########.fr       */
+/*   Created: 2022/10/20 11:12:09 by inavarro          #+#    #+#             */
+/*   Updated: 2022/10/20 12:55:31 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	i = 0;
+	i = strlen(s) - 1;
 	if ((char)c == '\0')
 		return ((char *)&s[ft_strlen(s)]);
-	while (s[i])
+	if (i < 0)
+		return (NULL);
+	while (i >= 0)
 	{
 		if ((char)c == s[i])
 			return ((char *)&s[i]);
-		i++;
+		i--;
 	}
 	return (0);
 }
+
+/*
+The strrchr() function is identical to strchr(), except it locates the
+last occurrence of c.
+*/
 
 /*
 The strchr() function locates the first occurrence of c (converted to a

@@ -6,7 +6,7 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:48:52 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/18 16:50:46 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:48:10 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 char		*ft_strchr(const char *s, int c);
+char		*ft_strrchr(const char *s, int c);
 
 #endif
