@@ -6,7 +6,7 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:48:52 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/22 19:37:22 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/10/22 21:51:21 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int			atoi(const char *str);
+int			ft_atoi(const char *str);
 
 #endif
