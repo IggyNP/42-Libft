@@ -6,7 +6,7 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:30:15 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/22 22:16:25 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/10/22 22:17:31 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_atoi(const char *str)
 		res = (str[i] - '0') + (res * 10);
 		i++;
 	}
-	return ((int)res * s);
+	return (res * s);
 }
 
 /*
