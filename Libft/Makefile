@@ -6,7 +6,7 @@
 #    By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 11:39:16 by inavarro          #+#    #+#              #
-#    Updated: 2022/10/22 19:37:39 by inavarro         ###   ########.fr        #
+#    Updated: 2022/10/24 10:09:43 by inavarro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRC = ft_bzero.c \
 	ft_memcmp.c \
 	ft_strnstr.c \
 	ft_atoi.c \
+	ft_memmove.c \
 
 OBJ = $(SRC:.c=.o)
 
