@@ -6,7 +6,7 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 11:12:09 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/20 12:58:39 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/10/27 20:20:46 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	i = strlen(s) - 1;
+	i = ft_strlen(s) - 1;
 	if ((char)c == '\0')
 		return ((char *)&s[ft_strlen(s)]);
 	if (i < 0)

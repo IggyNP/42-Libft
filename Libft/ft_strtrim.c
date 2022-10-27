@@ -1,48 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 17:36:04 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/27 19:08:49 by inavarro         ###   ########.fr       */
+/*   Created: 2022/10/27 19:09:27 by inavarro          #+#    #+#             */
+/*   Updated: 2022/10/27 20:30:28 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
-	size_t	j;
-	char	*str;
 
-	i = 0;
-	j = 0;
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (0);
-	while (s1[i])
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		str[i] = s2[j];
-		i++;
-		j++;
-	}
-	str[i] = '\0';
-	return (str);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	i = ft_strlen(s1);
+	while (i && ft_strchr(set, s1[i]))
+		i--;
+	return (ft_substr(s1, 0, i + 1));
 }
 
 /*
-Allocates (with malloc(3)) and returns a new
-string, which is the result of the concatenation
-of ’s1’ and ’s2’.
+Allocates (with malloc(3)) and returns a copy of
+’s1’ with the characters specified in ’set’ removed
+from the beginning and the end of the string.
 
-Returns: The new string.
+Returns: The trimmed string.
 NULL if the allocation fails.
 */
