@@ -6,7 +6,7 @@
 #    By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 11:39:16 by inavarro          #+#    #+#              #
-#    Updated: 2022/11/10 19:43:31 by inavarro         ###   ########.fr        #
+#    Updated: 2022/11/11 09:45:05 by inavarro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,9 @@ $(NAME): $(OBJ)
 	@echo "$(NAME) created"
 	@ranlib $(NAME)
 	@echo "$(NAME) indexed"
+
+bonus: $(OBJ_B) $(OBJ)
+	ar -crs $(NAME) $^
 
 %.o: %.c
 	@gcc $(FLAG) -c $< -o $@
