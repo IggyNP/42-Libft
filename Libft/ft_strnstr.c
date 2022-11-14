@@ -6,7 +6,7 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 16:51:06 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/22 19:27:18 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/11/14 16:57:43 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,15 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	nlen;
-
-	if (*needle == '\0')
+	if (!*needle)
 		return ((char *)haystack);
-	nlen = ft_strlen(needle);
-	while (*haystack && len-- >= nlen)
+	while (*haystack && len-- >= ft_strlen(needle))
 	{
-		if (ft_memcmp(haystack, needle, nlen) == 0)
+		if (ft_memcmp(haystack, needle, ft_strlen(needle)) == 0)
 			return ((char *)haystack);
 		haystack++;
 	}
-	return (0);
+	return (NULL);
 }
 
 /*

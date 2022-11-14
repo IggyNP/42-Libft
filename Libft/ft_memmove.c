@@ -6,7 +6,7 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 10:07:03 by inavarro          #+#    #+#             */
-/*   Updated: 2022/10/24 12:02:29 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:36:29 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t	i;
 
 	i = 0;
-	if (dst == src || !len)
+	if ((!dst && !src) || !len)
 		return (dst);
 	if (dst < src)
 	{
@@ -29,10 +29,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	else
 	{
-		while (len > 0)
+		while (len--)
 		{
-			((char *)dst)[len - 1] = ((char *)src)[len -1];
-			len--;
+			((char *)dst)[len] = ((char *)src)[len];
 		}
 	}
 	return (dst);
