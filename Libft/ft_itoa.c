@@ -6,21 +6,30 @@
 /*   By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:21:38 by inavarro          #+#    #+#             */
-/*   Updated: 2022/11/14 14:19:29 by inavarro         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:14:42 by inavarro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(int n)
+static int	ft_intlen(long int n)
 {
 	int	i;
+	int	aux;
 
-	i = n <= 0;
-	while (n != 0)
+	i = 0;
+	if (!n)
+		return (1);
+	while (n)
 	{
-		n = n / 10;
+		aux = n % 10;
+		if (aux < 0)
+		{
+			n = n * -1;
+			i++;
+		}
 		i++;
+		n = n / 10;
 	}
 	return (i);
 }
@@ -28,30 +37,30 @@ int	ft_intlen(int n)
 char	*ft_itoa(int n)
 {
 	int		len;
-	char	*alloc;
-	int		start;
+	char	*s;
+	int		pos;
 	long	nl;
 
-	nl = (long)n;
-	start = nl < 0;
-	len = ft_intlen(n);
-	alloc = (char *)malloc(sizeof(char) * (len + 1));
-	if (!alloc)
+	nl = n;
+	len = ft_intlen(nl);
+	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s)
 		return (NULL);
-	alloc[len] = '\0';
 	if (nl < 0)
 	{
 		nl = -nl;
-		alloc[0] = '-';
+		s[0] = '-';
 	}
-	len--;
-	while (len >= start)
+	if (!nl)
+		s[0] = '0';
+	pos = len - 1;
+	while (nl > 0)
 	{
-		alloc[len] = ((nl % 10) + 48);
+		s[pos--] = ((nl % 10) + '0');
 		nl = (nl / 10);
-		len--;
 	}
-	return (alloc);
+	s[len] = '\0';
+	return (s);
 }
 
 /*
