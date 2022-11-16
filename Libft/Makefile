@@ -6,7 +6,7 @@
 #    By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 11:39:16 by inavarro          #+#    #+#              #
-#    Updated: 2022/11/11 09:45:05 by inavarro         ###   ########.fr        #
+#    Updated: 2022/11/16 09:55:49 by inavarro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,8 @@ SRC = ft_bzero.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
-	ft_lstnew.c \
+
+SRC_BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
@@ -59,6 +60,8 @@ SRC = ft_bzero.c \
 	ft_lstmap.c \
 
 OBJ = $(SRC:.c=.o)
+
+OBJ_B = $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -75,7 +78,7 @@ bonus: $(OBJ_B) $(OBJ)
 	@gcc $(FLAG) -c $< -o $@
 
 clean:
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) $(OBJ_B)
 	@echo "OBJ deleted"
 
 fclean: clean
