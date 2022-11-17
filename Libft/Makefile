@@ -6,11 +6,9 @@
 #    By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 11:39:16 by inavarro          #+#    #+#              #
-#    Updated: 2022/11/17 13:27:48 by inavarro         ###   ########.fr        #
+#    Updated: 2022/11/17 15:21:25 by inavarro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-FLAG = -Wall -Wextra -Werror
 
 NAME = libft.a
 
@@ -63,23 +61,28 @@ SRC_BONUS = ft_lstnew.c \
 
 OBJ_B = $(SRC_BONUS:.c=.o)
 
-all: $(NAME)
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra
+RM = rm -rf
+AR = ar crs
 
 $(NAME): $(OBJ)
-	@ar -crs $(NAME) $(OBJ)
-
-bonus: $(OBJ_B) $(OBJ)
-	@ar -crs $(NAME) $^
+	$(AR) $@ $^
 
 %.o: %.c
-	@gcc $(FLAG) -c $< -o $@
+	$(CC) $(CFLAGS) -c $^ -o $@
+
+all: $(NAME)
 
 clean:
-	@rm -f $(OBJ) $(OBJ_B)
+	$(RM) $(OBJ) $(OBJ_B)
 
-fclean: clean
-	@rm -f $(NAME)
+fclean:	clean
+	$(RM) $(NAME)		
 
-re: fclean all
+re:	fclean all
 
-.PHONY: all, clean, fclean, re, bonus
+bonus: $(OBJ) $(OBJ_B)
+	$(AR) $(NAME) $(OBJ)  $(OBJ_N)
+
+.PHONY:	all clean fclean re bonus
