@@ -6,7 +6,7 @@
 #    By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 11:39:16 by inavarro          #+#    #+#              #
-#    Updated: 2022/11/17 15:21:25 by inavarro         ###   ########.fr        #
+#    Updated: 2022/11/17 17:48:19 by inavarro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,6 @@ fclean:	clean
 re:	fclean all
 
 bonus: $(OBJ) $(OBJ_B)
-	$(AR) $(NAME) $(OBJ)  $(OBJ_N)
+	$(AR) $(NAME) $(OBJ)  $(OBJ_B)
 
 .PHONY:	all clean fclean re bonus
