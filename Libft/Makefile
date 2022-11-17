@@ -6,7 +6,7 @@
 #    By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 11:39:16 by inavarro          #+#    #+#              #
-#    Updated: 2022/11/16 20:06:21 by inavarro         ###   ########.fr        #
+#    Updated: 2022/11/17 11:16:25 by inavarro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,10 +66,7 @@ OBJ_B = $(SRC_BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ)
-	@echo "$(NAME) created"
-	@ranlib $(NAME)
-	@echo "$(NAME) indexed"
+	@ar -crs $(NAME) $(OBJ)
 
 bonus: $(OBJ_B) $(OBJ)
 	ar -crs $(NAME) $^
@@ -79,11 +76,9 @@ bonus: $(OBJ_B) $(OBJ)
 
 clean:
 	@rm -f $(OBJ) $(OBJ_B)
-	@echo "OBJ deleted"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(NAME) deleted"
 
 re: fclean all
 
