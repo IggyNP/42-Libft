@@ -6,7 +6,7 @@
 #    By: inavarro <inavarro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 11:39:16 by inavarro          #+#    #+#              #
-#    Updated: 2022/11/16 09:55:49 by inavarro         ###   ########.fr        #
+#    Updated: 2022/11/16 20:06:21 by inavarro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ SRC = ft_bzero.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 
+OBJ = $(SRC:.c=.o)
+
 SRC_BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
@@ -58,8 +60,6 @@ SRC_BONUS = ft_lstnew.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
 	ft_lstmap.c \
-
-OBJ = $(SRC:.c=.o)
 
 OBJ_B = $(SRC_BONUS:.c=.o)
 
@@ -87,4 +87,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, bonus
